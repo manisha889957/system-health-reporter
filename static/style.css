@@ -1,0 +1,24 @@
+/* style.css - small custom rules. Bootstrap does the rest. */
+    /* Only a few small custom rules. Bootstrap does the rest. */
+
+    /* Thin bar at the very top that fills up until the next refresh */
+    #tick-bar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: var(--bs-info);
+      z-index: 2000;
+    }
+    #tick-bar.running { animation: tick linear forwards; }
+    @keyframes tick { from { width: 0; } to { width: 100%; } }
+
+    canvas.chart { width: 100%; height: 90px; display: block; }
+    .progress-bar { transition: width 0.6s ease, background-color 0.4s; }
+    th[data-sort] { cursor: pointer; user-select: none; white-space: nowrap; }
+    th[data-sort]:hover { color: var(--bs-info); }
+    .mem-cell { min-width: 160px; }
+    .mem-percent-text { width: 56px; text-align: right; }
+    .name-cell { word-break: break-all; font-weight: 600; }
+    .card { animation: rise 0.5s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
